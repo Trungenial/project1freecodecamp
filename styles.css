@@ -1,0 +1,190 @@
+/* || RESET */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+/* || VARIABELS */
+
+:root {
+  --color-text: #f3f3f3;
+  --color-form: #262645;
+  --color-background-cover-1: #343484e4;
+  --color-background-cover-2: #605c99a8;
+  --color-button-submit: #37af65;
+}
+
+/* || GENERAL STYLES  */
+
+* {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+body::before {
+  background-color: var(--color-background-cover-1); /* fall back*/
+  background-image: linear-gradient(
+      to right,
+      var(--color-background-cover-1),
+      var(--color-background-cover-2)
+    ),
+    url(survey-form-background.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+label {
+  margin: 1.9rem 0 1.5rem;
+}
+textarea {
+  width: 100%;
+  height: 13rem;
+  resize: vertical;
+  padding: 1rem;
+  color: black;
+}
+
+/* || UTILITY CLASSESS */
+
+/* || SITEWIDE */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 3.84rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.header__desc {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 2.52rem;
+  margin-top: -1.2rem;
+  text-align: center;
+  width: calc(50rem + 4%);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.control {
+  border-radius: 0.5rem;
+  line-height: 2.24rem;
+  padding: 0.6rem 1.2rem;
+  padding: 1rem;
+}
+.clue {
+  font-size: 1.44rem;
+}
+.label-btn {
+  display: flex;
+  gap: 0.7rem;
+  margin: 0 0 0.8rem;
+}
+.submit-button {
+  align-self: center;
+  background-color: var(--color-button-submit);
+  border-radius: 0.3rem;
+  border: none;
+  height: 5rem;
+  margin: 4rem 5rem 2rem;
+  width: 100%;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
+
+/* || STORE PAGES */
+
+#survey-form {
+  width: 54.6rem;
+  background-color: var(--color-form);
+  margin: auto;
+  padding: 3rem 4rem;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+
+#survey-form p {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.control,
+.control option {
+  color: #495057;
+  font-size: 1.6rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* || MODIFIERS*/
+
+@media all and (max-width: 431px) {
+  .header__desc {
+    width: 70%;
+    font-size: 2rem;
+  }
+
+  #survey-form {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 201px) {
+  .header__title {
+    margin-top: 1rem;
+    width: 90%;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .header__desc {
+    width: 15rem;
+    font-size: 1.5rem;
+  }
+
+  #survey-form {
+    width: 95%;
+  }
+}
